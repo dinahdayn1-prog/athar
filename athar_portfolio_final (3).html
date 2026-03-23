@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>شركة أثر — Athar Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Tajawal:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet"/>
+<style>
+
+/* ══ VARIABLES ══ */
+:root {
+  --em:    #1C2B1A;
+  --em2:   #253620;
+  --em3:   #2E4228;
+  --ro:    #C49A6C;
+  --ro2:   #D4B08A;
+  --ro3:   #E8C89A;
+  --ro4:   #8B6840;
+  --ow:    #F5EFE6;
+  --dim:   #A89878;
+  --gap:   1px solid rgba(196,154,108,0.2);
+}
+
+/* ══ RESET ══ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--em);
+  color: var(--ow);
+  font-family: 'Tajawal', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ══ MARBLE TEXTURE ══ */
+body::before {
+  content:'';
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    repeating-linear-gradient(128deg,transparent 0,transparent 80px,rgba(196,154,108,0.07) 80px,rgba(196,154,108,0.07) 82px,transparent 82px,transparent 200px),
+    repeating-linear-gradient(42deg, transparent 0,transparent 120px,rgba(196,154,108,0.04) 120px,rgba(196,154,108,0.04) 122px,transparent 122px,transparent 300px);
+}
+
+/* ══ NAV ══ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 60px; height:76px;
+  background:linear-gradient(to bottom,rgba(28,43,26,.97),rgba(28,43,26,.5));
+  backdrop-filter:blur(10px);
+  border-bottom:var(--gap);
+}
+.nav-brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+.nav-brand-ar { font-size:20px; font-weight:700; color:var(--ro3); line-height:1; }
+.nav-brand-en { font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:var(--ro4); }
+nav ul { display:flex; gap:32px; list-style:none; }
+nav ul a {
+  font-size:13px; color:var(--dim); text-decoration:none;
+  transition:color .3s; position:relative;
+}
+nav ul a::after {
+  content:''; position:absolute; bottom:-4px; left:0; right:0;
+  height:1px; background:var(--ro); transform:scaleX(0);
+  transform-origin:left; transition:transform .3s;
+}
+nav ul a:hover { color:var(--ro3); }
+nav ul a:hover::after { transform:scaleX(1); }
+
+/* ══ HERO ══ */
+#hero {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1; padding:100px 60px 80px; text-align:center;
+  overflow:hidden;
+}
+.hero-ring {
+  position:absolute; border-radius:50%; pointer-events:none;
+  border:1px solid rgba(196,154,108,0.12);
+  animation:spin 40s linear infinite;
+}
+@keyframes spin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+.hero-ring { width:600px; height:600px; top:50%; left:50%; transform:translate(-50%,-50%); }
+.hero-ring2 { width:440px; height:440px; top:50%; left:50%; transform:translate(-50%,-50%);
+  border-color:rgba(196,154,108,0.08); animation-duration:28s; animation-direction:reverse; }
+
+.hero-logo {
+  display:inline-block; margin-bottom:36px;
+  filter:drop-shadow(0 0 30px rgba(196,154,108,0.35));
+  animation:glow 3.5s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { filter:drop-shadow(0 0 18px rgba(196,154,108,.25)); }
+  to   { filter:drop-shadow(0 0 55px rgba(196,154,108,.6)); }
+}
+.hero-slogan-ar {
+  font-size:40px; font-weight:700; color:var(--ro3);
+  line-height:1.4; margin-bottom:8px;
+}
+.hero-slogan-en {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:16px; color:var(--dim); letter-spacing:3px; margin-bottom:36px;
+}
+.hero-div {
+  width:120px; height:1px; margin:16px auto;
+  background:linear-gradient(to right,transparent,var(--ro),transparent);
+}
+.hero-sub {
+  font-family:'Cinzel',serif; font-size:10px;
+  letter-spacing:4px; color:var(--dim);
+}
+.hero-btns { display:flex; gap:14px; justify-content:center; margin-top:44px; flex-wrap:wrap; }
+.btn-o {
+  padding:13px 36px; border:1px solid var(--ro);
+  color:var(--ro3); font-family:'Cinzel',serif;
+  font-size:10px; letter-spacing:3px; text-decoration:none;
+  transition:all .3s; position:relative; overflow:hidden;
+}
+.btn-o::before {
+  content:''; position:absolute; inset:0; background:var(--ro);
+  transform:scaleX(0); transform-origin:left; transition:transform .3s; z-index:-1;
+}
+.btn-o:hover { color:var(--em); }
+.btn-o:hover::before { transform:scaleX(1); }
+.btn-f {
+  padding:13px 36px; background:var(--ro); color:var(--em);
+  font-family:'Cinzel',serif; font-size:10px; letter-spacing:3px;
+  text-decoration:none; transition:all .3s;
+}
+.btn-f:hover { background:var(--ro3); }
+
+.scroll-ind {
+  position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  animation:bob 2s ease-in-out infinite;
+}
+@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+.scroll-ind span { font-family:'Cinzel',serif; font-size:8px; letter-spacing:4px; color:var(--ro4); }
+.scroll-line { width:1px; height:48px; background:linear-gradient(to bottom,var(--ro),transparent); }
+
+/* ══ SECTION BASE ══ */
+section { position:relative; z-index:1; padding:100px 80px; }
+.sec-label {
+  font-family:'Cinzel',serif; font-size:9px; letter-spacing:5px; color:var(--ro);
+  display:flex; align-items:center; gap:16px; margin-bottom:14px;
+}
+.sec-label::before,.sec-label::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(to right,transparent,var(--ro4));
+}
+.sec-label::after { background:linear-gradient(to left,transparent,var(--ro4)); }
+.sec-title { font-family:'Tajawal',sans-serif; font-size:42px; font-weight:700; color:var(--ow); line-height:1.3; }
+.sec-title span { color:var(--ro3); }
+
+/* ══ ABOUT ══ */
+#about {
+  border-top:var(--gap);
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+}
+.about-p { font-size:16px; line-height:2; color:var(--dim); margin-top:18px; }
+.about-img {
+  width:100%; aspect-ratio:1;
+  background:var(--em2); border:var(--gap);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.about-img::before {
+  content:''; position:absolute; inset:16px;
+  border:1px solid rgba(196,154,108,.15); pointer-events:none;
+}
+.corner { position:absolute; width:24px; height:24px; }
+.corner.tl { top:8px; right:8px; border-top:1px solid var(--ro); border-right:1px solid var(--ro); }
+.corner.tr { top:8px; left:8px;  border-top:1px solid var(--ro); border-left:1px solid var(--ro); }
+.corner.bl { bottom:8px; right:8px; border-bottom:1px solid var(--ro); border-right:1px solid var(--ro); }
+.corner.br { bottom:8px; left:8px;  border-bottom:1px solid var(--ro); border-left:1px solid var(--ro); }
+
+/* ══ SERVICES ══ */
+#services { border-top:var(--gap); background:var(--em2); }
+.srv-hd { text-align:center; margin-bottom:60px; }
+.srv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.srv-card {
+  background:var(--em); border:var(--gap); padding:44px 34px;
+  position:relative; overflow:hidden; transition:all .4s; cursor:default;
+}
+.srv-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(to right,transparent,var(--ro),transparent);
+  transform:scaleX(0); transition:transform .4s;
+}
+.srv-card:hover { background:var(--em3); transform:translateY(-4px); }
+.srv-card:hover::after { transform:scaleX(1); }
+.srv-num {
+  font-family:'Cormorant Garamond',serif; font-size:60px; font-weight:300;
+  color:rgba(196,154,108,.08); position:absolute; top:16px; left:24px; line-height:1;
+}
+.srv-ico { width:52px; height:52px; margin-bottom:22px; }
+.srv-t { font-size:19px; font-weight:700; color:var(--ro3); margin-bottom:10px; }
+.srv-d { font-size:14px; line-height:1.9; color:var(--dim); }
+
+/* ══ SCOPE ══ */
+#scope { border-top:var(--gap); }
+.scope-hd { text-align:center; margin-bottom:60px; }
+.scope-hd p { font-size:16px; color:var(--dim); line-height:2; max-width:640px; margin:18px auto 0; }
+.counters { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-bottom:2px; }
+.cnt {
+  background:var(--em2); border:var(--gap); padding:48px 28px; text-align:center;
+  position:relative; overflow:hidden;
+}
+.cnt::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(to right,transparent,var(--ro),transparent);
+}
+.cnt-n {
+  font-family:'Cormorant Garamond',serif; font-size:64px; font-weight:600;
+  color:var(--ro3); line-height:1;
+}
+.cnt-l { font-size:13px; color:var(--dim); margin-top:8px; letter-spacing:1px; }
+.cats { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.cat {
+  background:var(--em2); border:var(--gap); padding:32px 28px;
+  display:flex; align-items:center; gap:18px;
+  transition:background .3s; cursor:default;
+}
+.cat:hover { background:var(--em3); }
+.cat-t { font-size:17px; font-weight:700; color:var(--ro3); }
+.cat-s { font-size:12px; color:var(--dim); margin-top:3px; }
+.cities {
+  margin-top:2px; background:var(--em2); border:var(--gap);
+  padding:36px 40px; text-align:center;
+}
+.cities-label {
+  font-family:'Cinzel',serif; font-size:9px; letter-spacing:4px;
+  color:var(--ro); margin-bottom:20px;
+}
+.city-chips { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.chip {
+  border:1px solid rgba(196,154,108,.25); padding:8px 20px;
+  color:var(--dim); font-size:13px;
+}
+
+/* ══ APP ══ */
+#app {
+  border-top:var(--gap); background:var(--em2);
+  display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+}
+.phone {
+  width:200px; margin:0 auto;
+  background:#0A140A; border:2px solid var(--ro); border-radius:34px;
+  padding:16px 12px;
+  box-shadow:0 0 60px rgba(196,154,108,.25), inset 0 0 24px rgba(196,154,108,.06);
+}
+.phone-notch { width:56px; height:6px; background:var(--ro4); border-radius:3px; margin:0 auto 12px; }
+.phone-hdr {
+  background:var(--em3); border-radius:10px; padding:10px 10px;
+  display:flex; align-items:center; gap:8px; margin-bottom:8px;
+}
+.phone-av {
+  width:28px; height:28px; border-radius:50%;
+  background:linear-gradient(135deg,var(--ro4),var(--ro));
+  display:flex; align-items:center; justify-content:center;
+  font-size:9px; color:var(--em); font-weight:bold;
+}
+.phone-app { font-family:'Cinzel',serif; font-size:8px; color:var(--ro3); }
+.phone-sub { font-size:6px; color:var(--ro4); margin-top:1px; }
+.p-card {
+  background:var(--em3); border-radius:8px; padding:10px; margin-bottom:6px;
+  border:var(--gap);
+}
+.p-ct { font-size:8px; color:var(--ro2); margin-bottom:3px; direction:rtl; }
+.p-cs { font-size:6px; color:var(--dim); direction:rtl; }
+.p-bar { height:3px; border-radius:2px; background:linear-gradient(to right,var(--ro),transparent); margin-top:6px; }
+.phone-nav {
+  display:flex; justify-content:space-around; margin-top:10px;
+  padding-top:10px; border-top:var(--gap);
+}
+.feats { list-style:none; margin-top:28px; }
+.feats li {
+  display:flex; align-items:flex-start; gap:16px;
+  padding:17px 0; border-bottom:var(--gap);
+  font-size:14px; color:var(--dim); line-height:1.7;
+}
+.feat-ic {
+  width:36px; height:36px; flex-shrink:0;
+  border:1px solid var(--ro4);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px;
+}
+
+/* ══ WHY ══ */
+#why { border-top:var(--gap); text-align:center; }
+.why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:56px; }
+.why-card {
+  background:var(--em2); border:var(--gap); padding:38px 24px;
+  position:relative; transition:all .3s; cursor:default;
+}
+.why-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(to right,transparent,var(--ro),transparent);
+  transform:scaleX(0); transition:transform .3s;
+}
+.why-card:hover { background:var(--em3); }
+.why-card:hover::before { transform:scaleX(1); }
+.why-ic { font-size:28px; margin-bottom:16px; }
+.why-t { font-size:16px; font-weight:700; color:var(--ro3); margin-bottom:8px; }
+.why-d { font-size:13px; color:var(--dim); line-height:1.8; }
+
+/* ══ CONTACT ══ */
+#contact { border-top:var(--gap); background:var(--em2); }
+.cnt-inner { max-width:640px; margin:0 auto; text-align:center; }
+.cnt-inner p { font-size:16px; color:var(--dim); line-height:2; margin-top:18px; }
+.c-links { display:flex; justify-content:center; gap:14px; margin-top:44px; flex-wrap:wrap; }
+.c-link {
+  display:flex; align-items:center; gap:10px;
+  padding:14px 26px; border:1px solid var(--ro4);
+  color:var(--ro3); text-decoration:none;
+  font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px;
+  transition:all .3s;
+}
+.c-link:hover { background:var(--ro); color:var(--em); border-color:var(--ro); }
+.c-form {
+  margin-top:44px; border:var(--gap); padding:40px; background:var(--em3);
+}
+.c-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.c-inp, .c-ta {
+  width:100%; background:var(--em); border:var(--gap);
+  padding:13px 16px; color:var(--ow);
+  font-family:'Tajawal',sans-serif; font-size:14px; outline:none; direction:rtl;
+}
+.c-ta { resize:none; margin-bottom:14px; }
+.c-btn {
+  width:100%; padding:15px; background:var(--ro); color:var(--em);
+  border:none; cursor:pointer; font-family:'Cinzel',serif;
+  font-size:11px; letter-spacing:3px; transition:background .3s;
+}
+.c-btn:hover { background:var(--ro3); }
+
+/* ══ FOOTER ══ */
+footer {
+  background:#0E1A0E; border-top:var(--gap); padding:36px 80px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:20px; position:relative; z-index:1;
+}
+.ft-brand { font-size:22px; font-weight:700; color:var(--ro3); }
+.ft-brand span { display:block; font-family:'Cinzel',serif; font-size:8px; letter-spacing:4px; color:var(--ro4); margin-top:2px; }
+.ft-slogan { font-size:15px; color:var(--dim); font-style:italic; }
+.ft-info { text-align:left; }
+.ft-info a { color:var(--ro4); font-size:13px; text-decoration:none; direction:ltr; display:block; letter-spacing:1px; }
+.ft-info a:hover { color:var(--ro); }
+.ft-copy { font-size:11px; color:var(--ro4); margin-top:4px; }
+
+/* ══════════════════════════════
+   SCROLL MOTION SYSTEM
+══════════════════════════════ */
+
+/* Base states — hidden before scroll */
+.m-up   { opacity:0; transform:translateY(60px); }
+.m-left { opacity:0; transform:translateX(-60px); }
+.m-right{ opacity:0; transform:translateX(60px); }
+.m-scale{ opacity:0; transform:scale(0.88); }
+.m-flip { opacity:0; transform:rotateX(20deg) translateY(40px); }
+
+/* Visible state */
+.m-in {
+  opacity:1 !important;
+  transform:none !important;
+}
+
+/* Transition speeds */
+.m-up, .m-left, .m-right, .m-scale, .m-flip {
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+              transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  will-change: transform, opacity;
+}
+
+/* Stagger delays for grid children */
+.m-stagger > *               { opacity:0; transform:translateY(48px);
+                               transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                                           transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+.m-stagger.m-in > *:nth-child(1)  { opacity:1; transform:none; transition-delay:0s;   }
+.m-stagger.m-in > *:nth-child(2)  { opacity:1; transform:none; transition-delay:.12s; }
+.m-stagger.m-in > *:nth-child(3)  { opacity:1; transform:none; transition-delay:.24s; }
+.m-stagger.m-in > *:nth-child(4)  { opacity:1; transform:none; transition-delay:.36s; }
+.m-stagger.m-in > *:nth-child(5)  { opacity:1; transform:none; transition-delay:.48s; }
+.m-stagger.m-in > *:nth-child(6)  { opacity:1; transform:none; transition-delay:.60s; }
+
+/* Delay utilities */
+.m-d1 { transition-delay:.1s !important; }
+.m-d2 { transition-delay:.22s !important; }
+.m-d3 { transition-delay:.38s !important; }
+.m-d4 { transition-delay:.54s !important; }
+
+/* Progress bar at top of page */
+#progress-bar {
+  position: fixed; top:0; left:0; height:2px;
+  background: linear-gradient(to right, var(--ro), var(--ro3));
+  z-index: 200;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .1s linear;
+}
+
+/* Section entrance line — gold line that grows */
+.sec-line {
+  width:0; height:2px;
+  background: linear-gradient(to right, var(--ro), transparent);
+  margin-bottom: 20px;
+  transition: width 1s cubic-bezier(0.22,1,0.36,1);
+}
+.m-in .sec-line, .sec-line.m-in { width: 80px; }
+
+/* Counter number count-up animation */
+.cnt-n { transition: color .4s; }
+
+/* Card hover lift */
+.srv-card, .why-card, .cat, .cnt {
+  transition: background .3s, transform .35s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow .35s ease !important;
+}
+.srv-card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 48px rgba(0,0,0,.35) !important; }
+.why-card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(0,0,0,.3) !important; }
+.cat:hover { transform: translateX(-4px) !important; }
+.cnt:hover { transform: translateY(-4px) !important; }
+
+/* Nav slide in on load */
+nav { animation: navSlide .6s cubic-bezier(0.22,1,0.36,1) both; }
+@keyframes navSlide { from{transform:translateY(-100%);opacity:0} to{transform:translateY(0);opacity:1} }
+
+/* Hero logo entrance */
+.hero-logo { animation: heroIn 1s cubic-bezier(0.22,1,0.36,1) .2s both; }
+@keyframes heroIn {
+  from { opacity:0; transform:scale(0.7) translateY(30px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+
+/* Hero text cascade */
+.hero-slogan-ar  { animation: fadeUp .8s cubic-bezier(0.22,1,0.36,1) .6s both; }
+.hero-slogan-en  { animation: fadeUp .8s cubic-bezier(0.22,1,0.36,1) .75s both; }
+.hero-sub        { animation: fadeUp .8s cubic-bezier(0.22,1,0.36,1) .88s both; }
+.hero-btns       { animation: fadeUp .8s cubic-bezier(0.22,1,0.36,1) 1s both; }
+.scroll-ind      { animation: fadeUp .8s ease 1.2s both; }
+.hero-div        { animation: growLine .8s ease .7s both; }
+@keyframes growLine { from{width:0;opacity:0} to{width:120px;opacity:1} }
+@keyframes fadeUp   { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+/* Floating parallax on hero rings */
+.hero-ring  { animation: spin 40s linear infinite, floatRing 6s ease-in-out infinite alternate; }
+.hero-ring2 { animation: spinR 28s linear infinite, floatRing 8s ease-in-out infinite alternate-reverse; }
+@keyframes spin  { to { transform:translate(-50%,-50%) rotate(360deg); } }
+@keyframes spinR { to { transform:translate(-50%,-50%) rotate(-360deg); } }
+@keyframes floatRing {
+  from { margin-top: -10px; }
+  to   { margin-top:  10px; }
+}
+
+/* Logo pulse glow */
+.hero-logo { animation: heroIn 1s cubic-bezier(0.22,1,0.36,1) .2s both,
+                        glowPulse 3.5s ease-in-out 1.4s infinite alternate; }
+@keyframes glowPulse {
+  from { filter: drop-shadow(0 0 18px rgba(196,154,108,.28)); }
+  to   { filter: drop-shadow(0 0 55px rgba(196,154,108,.65)); }
+}
+
+/* Mobile: disable heavy transforms, keep fade */
+@media (max-width: 768px) {
+  .m-up, .m-left, .m-right, .m-scale, .m-flip,
+  .m-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .sec-line { width: 60px; }
+  .srv-card:hover, .why-card:hover, .cat:hover, .cnt:hover {
+    transform: none !important;
+  }
+}
+
+/* keep old .rev/.rev-s working too */
+.rev { opacity:0; transform:translateY(36px); transition:opacity .8s ease,transform .8s ease; }
+.rev.in { opacity:1; transform:translateY(0); }
+.rev-s > * { opacity:0; transform:translateY(28px); transition:opacity .7s ease,transform .7s ease; }
+.rev-s.in > *:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.08s}
+.rev-s.in > *:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.2s}
+.rev-s.in > *:nth-child(3){opacity:1;transform:translateY(0);transition-delay:.32s}
+.rev-s.in > *:nth-child(4){opacity:1;transform:translateY(0);transition-delay:.44s}
+.rev-s.in > *:nth-child(5){opacity:1;transform:translateY(0);transition-delay:.56s}
+.rev-s.in > *:nth-child(6){opacity:1;transform:translateY(0);transition-delay:.68s}
+@media (max-width: 768px) {
+  .rev, .rev-s, .rev-s > * { opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* Particles */
+.ptcl { position:fixed; inset:0; pointer-events:none; z-index:0; }
+.pt {
+  position:absolute; width:2px; height:2px;
+  background:var(--ro); border-radius:50%; opacity:0;
+  animation:floatUp var(--d) ease-in-out infinite var(--dl);
+}
+@keyframes floatUp {
+  0%,100%{opacity:0;transform:translateY(0) scale(1)}
+  20%{opacity:.5}
+  80%{opacity:.15}
+  100%{opacity:0;transform:translateY(-100px) scale(0)}
+}
+
+/* ══════════════════════════════
+   MOBILE RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav {
+    padding: 0 18px;
+    height: 62px;
+  }
+  nav ul { display: none; }
+  .nav-brand-ar { font-size: 17px; }
+
+  /* Hamburger menu button */
+  .ham {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .ham span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--ro);
+    border-radius: 2px;
+    transition: all .3s;
+  }
+
+  /* Mobile nav drawer */
+  .mob-nav {
+    display: block !important;
+    position: fixed;
+    top: 62px; left: 0; right: 0;
+    background: rgba(28,43,26,.98);
+    backdrop-filter: blur(12px);
+    border-bottom: var(--gap);
+    padding: 20px 0;
+    z-index: 99;
+    transform: translateY(-120%);
+    transition: transform .35s ease;
+  }
+  .mob-nav.open { transform: translateY(0); }
+  .mob-nav a {
+    display: block;
+    padding: 14px 28px;
+    font-size: 16px;
+    color: var(--dim);
+    text-decoration: none;
+    border-bottom: var(--gap);
+    text-align: right;
+    transition: color .2s, background .2s;
+  }
+  .mob-nav a:hover { color: var(--ro3); background: rgba(196,154,108,.06); }
+
+  /* HERO */
+  #hero { padding: 88px 20px 60px; }
+  .hero-ring { width: 320px; height: 320px; }
+  .hero-ring2 { width: 230px; height: 230px; }
+  .hero-logo svg { width: 240px; height: auto; }
+  .hero-slogan-ar { font-size: 26px; }
+  .hero-slogan-en { font-size: 13px; }
+  .hero-sub { font-size: 9px; letter-spacing: 2px; }
+  .hero-btns { flex-direction: column; align-items: center; gap: 10px; }
+  .btn-o, .btn-f { width: 100%; max-width: 280px; text-align: center; padding: 14px 20px; font-size: 10px; }
+
+  /* SECTIONS */
+  section { padding: 64px 20px; }
+  .sec-title { font-size: 28px; }
+
+  /* ABOUT */
+  #about { grid-template-columns: 1fr; gap: 36px; }
+  .about-img { aspect-ratio: 4/3; }
+  .about-p { font-size: 14px; }
+
+  /* SERVICES */
+  .srv-grid { grid-template-columns: 1fr; gap: 2px; }
+  .srv-card { padding: 32px 22px; }
+
+  /* SCOPE */
+  .counters { grid-template-columns: 1fr 1fr; }
+  .cnt { padding: 32px 16px; }
+  .cnt-n { font-size: 48px; }
+  .cnt-l { font-size: 11px; }
+  .cats { grid-template-columns: 1fr; }
+  .cat { padding: 22px 20px; }
+  .cities { padding: 28px 20px; }
+  .city-chips { gap: 8px; }
+  .chip { padding: 6px 14px; font-size: 12px; }
+
+  /* APP */
+  #app { grid-template-columns: 1fr; gap: 44px; }
+  .phone { width: 190px; }
+  .feats li { font-size: 13px; }
+
+  /* WHY */
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .why-card { padding: 28px 18px; }
+  .why-t { font-size: 14px; }
+  .why-d { font-size: 12px; }
+
+  /* CONTACT */
+  .c-links { flex-direction: column; align-items: center; gap: 10px; }
+  .c-link { width: 100%; max-width: 300px; justify-content: center; }
+  .c-row { grid-template-columns: 1fr; }
+  .c-form { padding: 24px 18px; }
+
+  /* FOOTER */
+  footer { flex-direction: column; padding: 32px 20px; gap: 16px; text-align: center; }
+  .ft-info { text-align: center; }
+  .ft-brand { font-size: 20px; }
+}
+
+@media (max-width: 420px) {
+  .hero-logo svg { width: 200px; }
+  .hero-slogan-ar { font-size: 22px; }
+  .sec-title { font-size: 24px; }
+  .counters { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .cnt-n { font-size: 40px; }
+  .why-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div id="progress-bar"></div>
+
+<!-- Progress bar -->
+<div id="progress-bar"></div>
+
+<!-- Particles -->
+<div class="ptcl" id="ptcl"></div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-brand" href="#hero">
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+      <polygon points="21,2 38,21 21,40 4,21" fill="none" stroke="#C49A6C" stroke-width="1.2"/>
+      <polygon points="21,8 32,21 21,34 10,21" fill="none" stroke="#C49A6C" stroke-width=".4" opacity=".4"/>
+      <line x1="21" y1="8" x2="34" y2="4" stroke="#C49A6C" stroke-width="1.2"/>
+      <line x1="34" y1="4" x2="34" y2="13" stroke="#C49A6C" stroke-width=".9"/>
+      <line x1="30" y1="13" x2="34" y2="13" stroke="#C49A6C" stroke-width=".6"/>
+      <rect x="15" y="23" width="4" height="13" fill="#C49A6C"/>
+      <rect x="20" y="17" width="4" height="19" fill="#C49A6C"/>
+      <rect x="25" y="25" width="4" height="11" fill="#C49A6C"/>
+      <polygon points="22,13 25,17 19,17" fill="#E8C89A"/>
+    </svg>
+    <div>
+      <div class="nav-brand-ar">شركة أثر</div>
+      <div class="nav-brand-en">ATHAR COMPANY</div>
+    </div>
+  </a>
+  <ul>
+    <li><a href="#about">من نحن</a></li>
+    <li><a href="#services">خدماتنا</a></li>
+    <li><a href="#scope">أعمالنا</a></li>
+    <li><a href="#app">التطبيق</a></li>
+    <li><a href="#contact">تواصل</a></li>
+  </ul>
+  <!-- Hamburger for mobile -->
+  <div class="ham" id="ham" style="display:none" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile nav drawer -->
+<div class="mob-nav" id="mobNav" style="display:none">
+  <a href="#about"   onclick="closeMenu()">من نحن</a>
+  <a href="#services" onclick="closeMenu()">خدماتنا</a>
+  <a href="#scope"   onclick="closeMenu()">أعمالنا</a>
+  <a href="#app"     onclick="closeMenu()">التطبيق</a>
+  <a href="#contact" onclick="closeMenu()">تواصل معنا</a>
+  <a href="tel:+009647822012266" onclick="closeMenu()" style="color:var(--ro3);font-family:Cinzel,serif;font-size:13px;direction:ltr;text-align:left">📞 009647822012266</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-ring"></div>
+  <div class="hero-ring hero-ring2"></div>
+
+  <div style="position:relative;z-index:2;animation:fadeUp .9s ease both">
+
+    <!-- LOGO -->
+    <div class="hero-logo">
+      <svg width="300" height="260" viewBox="0 0 300 260" fill="none">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8B6218"/>
+            <stop offset="45%" stop-color="#C49A6C"/>
+            <stop offset="100%" stop-color="#E8C89A"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#E8C89A"/>
+            <stop offset="100%" stop-color="#8B6218"/>
+          </linearGradient>
+          <filter id="gf">
+            <feGaussianBlur stdDeviation="2" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Diamond -->
+        <polygon points="150,6 278,115 150,224 22,115" fill="none" stroke="url(#g1)" stroke-width="2.2"/>
+        <polygon points="150,20 264,115 150,210 36,115" fill="none" stroke="#C49A6C" stroke-width=".6" opacity=".35"/>
+        <circle cx="150" cy="6"   r="3.5" fill="#E8C89A"/>
+        <circle cx="278" cy="115" r="3.5" fill="#E8C89A"/>
+        <circle cx="150" cy="224" r="3.5" fill="#E8C89A"/>
+        <circle cx="22"  cy="115" r="3.5" fill="#E8C89A"/>
+        <!-- Crane mast -->
+        <rect x="147" y="6" width="6" height="68" fill="url(#g2)" rx="1"/>
+        <!-- Crane arms -->
+        <rect x="76"  y="16" width="74" height="4.5" fill="url(#g1)" rx="1"/>
+        <rect x="153" y="16" width="92" height="4.5" fill="url(#g1)" rx="1"/>
+        <rect x="72"  y="14" width="13" height="11" rx="2" fill="#C49A6C"/>
+        <!-- Hook -->
+        <line x1="218" y1="20" x2="218" y2="50" stroke="#C49A6C" stroke-width="1.4"/>
+        <path d="M214,50 Q218,57 222,50" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <!-- Cabin -->
+        <rect x="144" y="34" width="12" height="9" rx="2" fill="#C49A6C"/>
+        <!-- Cables -->
+        <line x1="150" y1="16" x2="80"  y2="20" stroke="#C49A6C" stroke-width=".7" opacity=".5"/>
+        <line x1="150" y1="16" x2="242" y2="20" stroke="#C49A6C" stroke-width=".7" opacity=".5"/>
+        <!-- Left tower -->
+        <rect x="92"  y="104" width="22" height="76" fill="url(#g2)"/>
+        <rect x="95"  y="96"  width="16" height="10" fill="#C49A6C"/>
+        <polygon points="103,82 109,96 97,96" fill="#E8C89A"/>
+        <rect x="96"  y="110" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <rect x="96"  y="118" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <rect x="96"  y="126" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <rect x="96"  y="134" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <!-- Centre tower -->
+        <rect x="136" y="74"  width="28" height="106" fill="url(#g2)"/>
+        <rect x="139" y="64"  width="22" height="12"  fill="#C49A6C"/>
+        <rect x="141" y="78"  width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="88"  width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="98"  width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="108" width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="118" width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="128" width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="138" width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="148" width="18" height="2"   fill="#1C2B1A" opacity=".4"/>
+        <rect x="141" y="82"  width="7"  height="5"   fill="#E8C89A" opacity=".25"/>
+        <rect x="152" y="82"  width="7"  height="5"   fill="#E8C89A" opacity=".25"/>
+        <rect x="141" y="95"  width="7"  height="5"   fill="#E8C89A" opacity=".25"/>
+        <rect x="152" y="95"  width="7"  height="5"   fill="#E8C89A" opacity=".25"/>
+        <!-- Right tower -->
+        <rect x="186" y="104" width="22" height="76" fill="url(#g2)"/>
+        <rect x="189" y="96"  width="16" height="10" fill="#C49A6C"/>
+        <polygon points="197,82 203,96 191,96" fill="#E8C89A"/>
+        <rect x="190" y="110" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <rect x="190" y="118" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <rect x="190" y="126" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <rect x="190" y="134" width="14" height="2" fill="#1C2B1A" opacity=".45"/>
+        <!-- Platform -->
+        <rect x="78"  y="180" width="144" height="7" fill="#C49A6C"/>
+        <rect x="68"  y="187" width="164" height="4" fill="#8B6218" rx="1"/>
+        <!-- Arabic name -->
+        <text x="150" y="224" text-anchor="middle"
+          font-family="Tajawal,serif" font-size="38" font-weight="700"
+          fill="url(#g1)" filter="url(#gf)" style="font-style:italic">أثر</text>
+        <!-- Dune sweep -->
+        <path d="M55,232 Q102,220 150,226 Q198,232 245,220"
+          fill="none" stroke="url(#g1)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M70,237 Q110,227 150,232 Q190,237 230,227"
+          fill="none" stroke="#C49A6C" stroke-width=".8" stroke-linecap="round" opacity=".35"/>
+        <!-- English -->
+        <text x="150" y="252" text-anchor="middle"
+          font-family="Cinzel,serif" font-size="12" font-weight="600"
+          fill="#C49A6C" letter-spacing="7">ATHAR COMPANY</text>
+        <line x1="46"  y1="257" x2="102" y2="257" stroke="#C49A6C" stroke-width=".6"/>
+        <text x="150" y="260" text-anchor="middle"
+          font-family="Cinzel,serif" font-size="6" fill="#8B6218" letter-spacing="2">ENGINEERING &amp; CONSTRUCTION</text>
+        <line x1="198" y1="257" x2="254" y2="257" stroke="#C49A6C" stroke-width=".6"/>
+      </svg>
+    </div>
+
+    <div class="hero-div"></div>
+    <div class="hero-slogan-ar">هنا تركنا أثرنا</div>
+    <div class="hero-slogan-en">Here, We Left Our Mark</div>
+    <div class="hero-div"></div>
+    <div class="hero-sub">Engineering · Architecture · Interior Design · Consulting</div>
+
+    <div class="hero-btns">
+      <a href="#services" class="btn-o">اكتشف خدماتنا</a>
+      <a href="https://wa.me/009647822012266" target="_blank" class="btn-f">📞 تواصل معنا</a>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="rev m-left">
+    <div class="sec-line"></div>
+    <div class="sec-label">من نحن</div>
+    <h2 class="sec-title">نبني الحاضر،<br/><span>نرسم المستقبل</span></h2>
+    <p class="about-p">شركة أثر هي شركة هندسية متكاملة تجمع بين الهندسة المعمارية، المدنية، الكهروميكانيكية، والتصميم الداخلي والخارجي — كل ما يخص البناء والتنفيذ تحت سقف واحد.</p>
+    <p class="about-p">ولدنا من أرض بين النهرين، ونحمل روح الحضارة العراقية في كل خطوة — من رسم المخطط الأول إلى لحظة التسليم النهائي.</p>
+  </div>
+  <div class="rev m-right">
+    <div class="about-img">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+      <svg width="300" height="270" viewBox="0 0 300 270" fill="none" opacity=".65">
+        <rect x="10"  y="205" width="280" height="18" fill="#C49A6C" opacity=".28"/>
+        <rect x="22"  y="186" width="256" height="21" fill="#C49A6C" opacity=".32"/>
+        <rect x="38"  y="168" width="224" height="20" fill="#C49A6C" opacity=".37"/>
+        <rect x="56"  y="150" width="188" height="20" fill="#C49A6C" opacity=".42"/>
+        <rect x="76"  y="134" width="148" height="18" fill="#C49A6C" opacity=".47"/>
+        <rect x="96"  y="118" width="108" height="18" fill="#C49A6C" opacity=".52"/>
+        <rect x="116" y="104" width="68"  height="16" fill="#C49A6C" opacity=".57"/>
+        <rect x="136" y="90"  width="28"  height="16" fill="#C49A6C" opacity=".62"/>
+        <rect x="10"  y="205" width="280" height="2" fill="#C49A6C" opacity=".7"/>
+        <rect x="22"  y="186" width="256" height="2" fill="#C49A6C" opacity=".6"/>
+        <rect x="38"  y="168" width="224" height="2" fill="#C49A6C" opacity=".55"/>
+        <rect x="56"  y="150" width="188" height="2" fill="#C49A6C" opacity=".5"/>
+        <polygon points="150,56 158,90 142,90" fill="#E8C89A" opacity=".6"/>
+        <circle cx="70"  cy="36" r="2"   fill="#E8C89A" opacity=".45"/>
+        <circle cx="150" cy="18" r="3"   fill="#E8C89A" opacity=".65"/>
+        <circle cx="230" cy="42" r="1.8" fill="#E8C89A" opacity=".4"/>
+        <circle cx="290" cy="26" r="1.5" fill="#E8C89A" opacity=".45"/>
+        <line x1="54" y1="223" x2="54" y2="176" stroke="#C49A6C" stroke-width="2" opacity=".35"/>
+        <path d="M54,176 Q40,165 30,169" fill="none" stroke="#C49A6C" stroke-width="1.4" opacity=".3"/>
+        <path d="M54,176 Q48,162 42,160" fill="none" stroke="#C49A6C" stroke-width="1.4" opacity=".3"/>
+        <line x1="246" y1="223" x2="246" y2="180" stroke="#C49A6C" stroke-width="2" opacity=".35"/>
+        <path d="M246,180 Q260,169 270,173" fill="none" stroke="#C49A6C" stroke-width="1.4" opacity=".3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="srv-hd rev m-up">
+    <div class="sec-line"></div>
+    <div class="sec-label">ما نقدمه</div>
+    <h2 class="sec-title">خدماتنا <span>المتكاملة</span></h2>
+  </div>
+  <div class="srv-grid m-stagger">
+
+    <div class="srv-card">
+      <div class="srv-num">01</div>
+      <svg class="srv-ico" viewBox="0 0 52 52" fill="none">
+        <path d="M8,44 L8,24 L26,10 L44,24 L44,44" stroke="#C49A6C" stroke-width="1.5"/>
+        <rect x="18" y="32" width="16" height="12" stroke="#C49A6C" stroke-width="1"/>
+        <line x1="8" y1="44" x2="44" y2="44" stroke="#C49A6C" stroke-width="1.5"/>
+        <circle cx="26" cy="20" r="3" fill="#C49A6C"/>
+      </svg>
+      <div class="srv-t">التصميم المعماري</div>
+      <div class="srv-d">نصمم مبانٍ تجمع بين الجمال والوظيفة — فيلات، مجمعات سكنية، مبانٍ تجارية — بلمسة معمارية عراقية معاصرة تحمل روح الأصالة.</div>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-num">02</div>
+      <svg class="srv-ico" viewBox="0 0 52 52" fill="none">
+        <rect x="10" y="8"  width="8" height="36" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <rect x="22" y="16" width="8" height="28" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <rect x="34" y="11" width="8" height="33" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <line x1="6" y1="44" x2="46" y2="44" stroke="#C49A6C" stroke-width="1.4"/>
+        <polygon points="14,8 18,3 22,8" fill="#E8C89A"/>
+        <polygon points="26,16 30,11 34,16" fill="#E8C89A"/>
+        <polygon points="38,11 42,6 46,11" fill="#E8C89A"/>
+      </svg>
+      <div class="srv-t">الهندسة الإنشائية</div>
+      <div class="srv-d">هندسة مدنية وإنشائية متكاملة — تصميم أساسات وهياكل إنشائية وإشراف ميداني لضمان أعلى معايير السلامة والجودة في كل مرحلة.</div>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-num">03</div>
+      <svg class="srv-ico" viewBox="0 0 52 52" fill="none">
+        <rect x="6"  y="6"  width="40" height="40" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <rect x="12" y="12" width="12" height="12" fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <rect x="28" y="12" width="12" height="12" fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <rect x="12" y="28" width="28" height="12" fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <line x1="18" y1="28" x2="18" y2="46" stroke="#C49A6C" stroke-width=".5" opacity=".5"/>
+        <line x1="32" y1="28" x2="32" y2="46" stroke="#C49A6C" stroke-width=".5" opacity=".5"/>
+      </svg>
+      <div class="srv-t">التصميم الداخلي</div>
+      <div class="srv-d">نحوّل المساحات الداخلية إلى تحف فنية — تصميم داخلي وخارجي يجمع الذوق الرفيع مع اختيار المواد والألوان والإضاءة المثالية.</div>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-num">04</div>
+      <svg class="srv-ico" viewBox="0 0 52 52" fill="none">
+        <circle cx="26" cy="26" r="18" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <circle cx="26" cy="26" r="8"  fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <line x1="26" y1="8"  x2="26" y2="18" stroke="#C49A6C" stroke-width="1.5"/>
+        <line x1="26" y1="34" x2="26" y2="44" stroke="#C49A6C" stroke-width="1.5"/>
+        <line x1="8"  y1="26" x2="18" y2="26" stroke="#C49A6C" stroke-width="1.5"/>
+        <line x1="34" y1="26" x2="44" y2="26" stroke="#C49A6C" stroke-width="1.5"/>
+        <polygon points="26,20 28,26 26,32 24,26" fill="#C49A6C"/>
+      </svg>
+      <div class="srv-t">الإشراف والتنفيذ</div>
+      <div class="srv-d">إشراف هندسي ميداني يومي — نضمن التوافق مع المخططات والمواصفات والجداول الزمنية في كل مرحلة من مراحل البناء والتنفيذ.</div>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-num">05</div>
+      <svg class="srv-ico" viewBox="0 0 52 52" fill="none">
+        <rect x="8"  y="12" width="36" height="28" rx="3" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <path d="M8,20 L44,20" stroke="#C49A6C" stroke-width="1"/>
+        <circle cx="16" cy="16" r="2" fill="#C49A6C"/>
+        <circle cx="24" cy="16" r="2" fill="#C49A6C"/>
+        <rect x="14" y="26" width="24" height="3" rx="1" fill="#C49A6C" opacity=".55"/>
+        <rect x="14" y="32" width="16" height="3" rx="1" fill="#C49A6C" opacity=".38"/>
+      </svg>
+      <div class="srv-t">الاستشارات الهندسية</div>
+      <div class="srv-d">استشارات فنية وهندسية متخصصة — تقييم مخططات، دراسة جدوى، حل مشكلات تقنية، ومراجعة عقود لأصحاب المشاريع الكبرى.</div>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-num">06</div>
+      <svg class="srv-ico" viewBox="0 0 52 52" fill="none">
+        <rect x="12" y="6"  width="28" height="40" rx="4" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <rect x="18" y="14" width="16" height="10" rx="2" fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <rect x="18" y="28" width="16" height="3"  rx="1" fill="#C49A6C" opacity=".5"/>
+        <rect x="18" y="34" width="10" height="3"  rx="1" fill="#C49A6C" opacity=".32"/>
+        <line x1="26" y1="42" x2="26" y2="46" stroke="#C49A6C" stroke-width="1.4"/>
+        <line x1="20" y1="46" x2="32" y2="46" stroke="#C49A6C" stroke-width="1.4"/>
+      </svg>
+      <div class="srv-t">منصة أثر الرقمية</div>
+      <div class="srv-d">تطبيق ذكي يربط أصحاب المشاريع بأفضل الشركات الهندسية والمقاولين — تصفح، قارن، تواصل، وتابع مشروعك بلمسة إصبع.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SCOPE ══ -->
+<section id="scope">
+  <div class="scope-hd rev m-up">
+    <div class="sec-line"></div>
+    <div class="sec-label">نطاق أعمالنا</div>
+    <h2 class="sec-title">حضور على مستوى <span>العراق</span></h2>
+    <p>نفخر بمحفظة متنوعة من المشاريع المنجزة والجارية تمتد عبر مختلف المحافظات العراقية — من المشاريع السكنية والتجارية إلى البنى التحتية والتصاميم الداخلية الفاخرة.</p>
+  </div>
+
+  <div class="counters m-stagger">
+    <div class="cnt">
+      <div class="cnt-n">+٢٠</div>
+      <div class="cnt-l">مشروع منجز</div>
+    </div>
+    <div class="cnt">
+      <div class="cnt-n">٥+</div>
+      <div class="cnt-l">محافظات عراقية</div>
+    </div>
+    <div class="cnt">
+      <div class="cnt-n">١٠٠٪</div>
+      <div class="cnt-l">رضا العملاء</div>
+    </div>
+    <div class="cnt">
+      <div class="cnt-n">٣٦٠°</div>
+      <div class="cnt-l">خدمات متكاملة</div>
+    </div>
+  </div>
+
+  <div class="cats rev-s" style="margin-top:2px">
+    <div class="cat">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <path d="M6,38 L6,18 L22,6 L38,18 L38,38" stroke="#C49A6C" stroke-width="1.4"/>
+        <rect x="14" y="26" width="16" height="12" stroke="#C49A6C" stroke-width="1"/>
+        <circle cx="22" cy="16" r="2.5" fill="#C49A6C"/>
+      </svg>
+      <div><div class="cat-t">سكني</div><div class="cat-s">فيلات · شقق · مجمعات سكنية</div></div>
+    </div>
+    <div class="cat">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <rect x="6"  y="12" width="8" height="28" fill="none" stroke="#C49A6C" stroke-width="1.3"/>
+        <rect x="18" y="4"  width="8" height="36" fill="none" stroke="#C49A6C" stroke-width="1.3"/>
+        <rect x="30" y="8"  width="8" height="32" fill="none" stroke="#C49A6C" stroke-width="1.3"/>
+        <line x1="4" y1="40" x2="40" y2="40" stroke="#C49A6C" stroke-width="1.3"/>
+        <polygon points="22,0 26,4 18,4" fill="#E8C89A"/>
+      </svg>
+      <div><div class="cat-t">تجاري وإداري</div><div class="cat-s">أبراج · مكاتب · مراكز تجارية</div></div>
+    </div>
+    <div class="cat">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <rect x="4"  y="8"  width="36" height="28" fill="none" stroke="#C49A6C" stroke-width="1.3"/>
+        <rect x="10" y="14" width="10" height="10" fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <rect x="24" y="14" width="10" height="10" fill="none" stroke="#C49A6C" stroke-width="1"/>
+        <rect x="10" y="26" width="24" height="8"  fill="none" stroke="#C49A6C" stroke-width="1"/>
+      </svg>
+      <div><div class="cat-t">تصميم داخلي</div><div class="cat-s">فاخر · معاصر · بمواد راقية</div></div>
+    </div>
+    <div class="cat">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <line x1="6"  y1="22" x2="38" y2="22" stroke="#C49A6C" stroke-width="2"/>
+        <line x1="22" y1="6"  x2="22" y2="38" stroke="#C49A6C" stroke-width="2"/>
+        <circle cx="22" cy="22" r="8"  fill="none" stroke="#C49A6C" stroke-width="1.2"/>
+        <circle cx="22" cy="22" r="3"  fill="#C49A6C"/>
+      </svg>
+      <div><div class="cat-t">بنية تحتية</div><div class="cat-s">طرق · شبكات · مشاريع حكومية</div></div>
+    </div>
+    <div class="cat">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <path d="M6,36 L6,16 Q6,6 22,6 Q38,6 38,16 L38,36" stroke="#C49A6C" stroke-width="1.4"/>
+        <path d="M12,36 L12,18 Q12,12 22,12 Q32,12 32,18 L32,36" stroke="#C49A6C" stroke-width="1"/>
+        <circle cx="22" cy="12" r="3" fill="#E8C89A"/>
+      </svg>
+      <div><div class="cat-t">معماري وديني</div><div class="cat-s">مساجد · مجمعات · تراث</div></div>
+    </div>
+    <div class="cat" style="background:linear-gradient(135deg,var(--em2),var(--em3));border-color:var(--ro4)">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="18" fill="none" stroke="#C49A6C" stroke-width="1.4"/>
+        <path d="M14,22 L20,28 L30,16" stroke="#E8C89A" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div><div class="cat-t">استشارات</div><div class="cat-s">دراسات جدوى · مراجعة · إشراف</div></div>
+    </div>
+  </div>
+
+  <div class="cities rev">
+    <div class="cities-label">COVERAGE ACROSS IRAQ · تغطية على مستوى العراق</div>
+    <div class="city-chips">
+      <span class="chip">بغداد</span>
+      <span class="chip">البصرة</span>
+      <span class="chip">أربيل</span>
+      <span class="chip">النجف</span>
+      <span class="chip">كربلاء</span>
+      <span class="chip">الموصل</span>
+      <span class="chip">كركوك</span>
+      <span class="chip">الديوانية</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APP ══ -->
+<section id="app">
+  <div class="rev" style="display:flex;justify-content:center">
+    <div style="position:relative">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:280px;height:280px;background:radial-gradient(circle,rgba(196,154,108,.15),transparent 70%);pointer-events:none"></div>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-hdr">
+          <div class="phone-av">أ</div>
+          <div>
+            <div class="phone-app">ATHAR APP</div>
+            <div class="phone-sub">منصة الهندسة الذكية</div>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="p-ct">مشاريع قريبة منك</div>
+          <div class="p-cs">بغداد · ٣ مقاولين متاحون</div>
+          <div class="p-bar" style="width:80%"></div>
+        </div>
+        <div class="p-card">
+          <div class="p-ct">عروض الأسعار</div>
+          <div class="p-cs">٥ عروض جديدة · ٢٤ ساعة</div>
+          <div class="p-bar" style="width:60%"></div>
+        </div>
+        <div class="p-card">
+          <div class="p-ct">تتبع المشروع</div>
+          <div class="p-cs">المرحلة ٢ من ٤ · ٤٥٪ مكتمل</div>
+          <div class="p-bar" style="width:45%"></div>
+        </div>
+        <div class="phone-nav">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3,10 L10,3 L17,10 L17,17 L3,17 Z" stroke="#C49A6C" stroke-width="1.2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="#C49A6C" stroke-width="1.2"/><circle cx="10" cy="10" r="2" fill="#C49A6C"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#C49A6C" stroke-width="1.2"/><line x1="3" y1="8" x2="17" y2="8" stroke="#C49A6C" stroke-width=".8"/></svg>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#C49A6C" stroke-width="1.2"/><path d="M3,18 Q3,13 10,13 Q17,13 17,18" stroke="#C49A6C" stroke-width="1.2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rev">
+    <div class="sec-label">التطبيق الذكي</div>
+    <h2 class="sec-title">منصة <span>أثر</span> الرقمية</h2>
+    <p style="font-size:15px;color:var(--dim);line-height:2;margin-top:16px">
+      أول منصة عراقية متخصصة تربط أصحاب المشاريع بالشركات الهندسية والمقاولين الموثوقين — بشكل شفاف، سريع، وآمن.
+    </p>
+    <ul class="feats">
+      <li>
+        <div class="feat-ic">🔍</div>
+        <div><strong style="color:var(--ro2)">تصفح ذكي</strong><br/>ابحث عن مقاول أو مهندس بحسب التخصص والموقع والتقييم</div>
+      </li>
+      <li>
+        <div class="feat-ic">💬</div>
+        <div><strong style="color:var(--ro2)">عروض فورية</strong><br/>استلم عروض أسعار من شركات متعددة وقارن بينها مباشرة</div>
+      </li>
+      <li>
+        <div class="feat-ic">📊</div>
+        <div><strong style="color:var(--ro2)">تتبع المشروع</strong><br/>راقب تقدم مشروعك لحظة بلحظة مع تقارير دورية مفصلة</div>
+      </li>
+      <li>
+        <div class="feat-ic">⭐</div>
+        <div><strong style="color:var(--ro2)">تقييمات موثوقة</strong><br/>آراء حقيقية من أصحاب مشاريع سابقة لمساعدتك في الاختيار</div>
+      </li>
+    </ul>
+    <div style="margin-top:30px">
+      <a href="#contact" class="btn-o">انضم لقائمة الانتظار</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ══ -->
+<section id="why">
+  <div class="rev m-up" style="text-align:center">
+    <div class="sec-line" style="margin:0 auto 20px"></div>
+    <div class="sec-label">لماذا أثر</div>
+    <h2 class="sec-title">ما يجعلنا <span>مختلفين</span></h2>
+  </div>
+  <div class="why-grid m-stagger">
+    <div class="why-card">
+      <div class="why-ic">🏛️</div>
+      <div class="why-t">فريق متكامل</div>
+      <div class="why-d">مهندسون معماريون، مدنيون، كهروميكانيك، وتصاميم داخلية — كل التخصصات تحت سقف واحد</div>
+    </div>
+    <div class="why-card">
+      <div class="why-ic">⚡</div>
+      <div class="why-t">سرعة التنفيذ</div>
+      <div class="why-d">منهجية عمل واضحة وجداول زمنية دقيقة تضمن تسليم مشروعك في الوقت المحدد دائماً</div>
+    </div>
+    <div class="why-card">
+      <div class="why-ic">💎</div>
+      <div class="why-t">جودة لا تُقيَّد</div>
+      <div class="why-d">نستخدم أجود المواد ونطبق أعلى معايير الجودة الدولية في كل مرحلة من مراحل العمل</div>
+    </div>
+    <div class="why-card">
+      <div class="why-ic">🤝</div>
+      <div class="why-t">شراكة حقيقية</div>
+      <div class="why-d">نتعامل مع كل مشروع كأنه مشروعنا — شفافية كاملة، تواصل مستمر، والتزام تام بتوقعاتك</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" style="background:var(--em2)">
+  <div class="cnt-inner rev m-up">
+    <div class="sec-label">تواصل معنا</div>
+    <h2 class="sec-title" style="text-align:center">ابدأ مشروعك <span>اليوم</span></h2>
+    <p>هل لديك فكرة، مشروع، أو مجرد سؤال؟ نحن هنا. تواصل معنا وسنرد عليك في أقرب وقت ممكن.</p>
+
+    <div class="c-links">
+      <a href="tel:+009647822012266" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M2.5,1.5 Q2.5,.5 3.5,.5 L5.5,.5 Q6.5,.5 6.5,1.5 L7,4.5 Q7,5.5 6,6 L5,6.5 Q5.5,8.5 8.5,11.5 L9,11 Q9.5,10 10.5,10.5 L13.5,11 Q14.5,11 14.5,12 L14.5,14 Q14.5,14.5 13.5,14.5 Q3.5,14.5 .5,4.5 Q.5,2.5 1.5,2 Z" stroke="#C49A6C" stroke-width=".9"/>
+        </svg>
+        009647822012266
+      </a>
+      <a href="https://wa.me/009647822012266" target="_blank" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <circle cx="7.5" cy="7.5" r="6.5" stroke="#C49A6C" stroke-width=".9"/>
+          <path d="M4.5,10 Q3.5,11.5 4,12 Q6.5,11 8,10.5 Q11.5,9 11.5,6 Q11.5,3 7.5,3 Q3.5,3 3.5,6.5 Q3.5,8 4.5,9 Z" stroke="#C49A6C" stroke-width=".9" fill="none"/>
+        </svg>
+        واتساب
+      </a>
+      <a href="/cdn-cgi/l/email-protection#cda4a3aba28dacb9a5acbfe3a4bc" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <rect x="1" y="3" width="13" height="9" rx="1.5" stroke="#C49A6C" stroke-width=".9"/>
+          <path d="M1,5 L7.5,8.5 L14,5" stroke="#C49A6C" stroke-width=".9"/>
+        </svg>
+        <span class="__cf_email__" data-cfemail="066f6860694667726e6774286f77">[email&#160;protected]</span>
+      </a>
+    </div>
+
+    <div class="c-form">
+      <div class="c-row">
+        <input class="c-inp" placeholder="اسمك الكريم"/>
+        <input class="c-inp" placeholder="رقم هاتفك"/>
+      </div>
+      <textarea class="c-ta" rows="4" placeholder="اخبرنا عن مشروعك..."></textarea>
+      <button class="c-btn">أرسل رسالتك — SEND</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-brand">
+    شركة أثر
+    <span>ATHAR COMPANY · ENGINEERING &amp; CONSTRUCTION</span>
+  </div>
+  <div class="ft-slogan">"هنا تركنا أثرنا"</div>
+  <div class="ft-info">
+    <a href="tel:+009647822012266">009647822012266</a>
+    <a href="https://wa.me/009647822012266" target="_blank">واتساب</a>
+    <div class="ft-copy">بغداد، العراق · ٢٠٢٥</div>
+  </div>
+</footer>
+
+<script>
+// ── Mobile hamburger
+function checkMobile() {
+  const isMobile = window.innerWidth <= 768;
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mobNav');
+  if(ham) ham.style.display = isMobile ? 'flex' : 'none';
+  if(mob) mob.style.display = isMobile ? 'block' : 'none';
+  if(!isMobile && mob) mob.classList.remove('open');
+}
+checkMobile();
+window.addEventListener('resize', checkMobile);
+
+function toggleMenu() { document.getElementById('mobNav').classList.toggle('open'); }
+function closeMenu()  { document.getElementById('mobNav').classList.remove('open'); }
+
+// ── Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) {
+      e.preventDefault();
+      closeMenu();
+      setTimeout(() => {
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 70, behavior:'smooth' });
+      }, 80);
+    }
+  });
+});
+
+// ── Particles
+const pc = document.getElementById('ptcl');
+for(let i=0;i<28;i++){
+  const p = document.createElement('div');
+  p.className = 'pt';
+  p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${4+Math.random()*7}s;--dl:${Math.random()*7}s`;
+  pc.appendChild(p);
+}
+
+// ── Progress bar
+const bar = document.getElementById('progress-bar');
+function updateBar() {
+  if(!bar) return;
+  const h = document.documentElement;
+  const pct = window.scrollY / (h.scrollHeight - h.clientHeight);
+  bar.style.transform = `scaleX(${pct})`;
+}
+window.addEventListener('scroll', updateBar, { passive:true });
+
+// ── UNIFIED SCROLL MOTION
+// Works on both desktop (animated) and mobile (instant)
+const isMob = () => window.innerWidth <= 768;
+
+function triggerMotion(el) {
+  el.classList.add('m-in', 'in');
+}
+
+// Count-up animation for numbers
+function countUp(el) {
+  if(el.dataset.counted) return;
+  el.dataset.counted = '1';
+  const raw = el.textContent.trim();
+  const num = parseFloat(raw.replace(/[^0-9.]/g,''));
+  if(isNaN(num)) return;
+  const suffix = raw.replace(/[0-9.]/g,'');
+  let start = 0, dur = 1600, startTime = null;
+  function step(ts) {
+    if(!startTime) startTime = ts;
+    const prog = Math.min((ts - startTime) / dur, 1);
+    const eased = 1 - Math.pow(1 - prog, 3);
+    el.textContent = Math.round(eased * num) + suffix;
+    if(prog < 1) requestAnimationFrame(step);
+    else el.textContent = raw;
+  }
+  requestAnimationFrame(step);
+}
+
+// Intersection observer — main engine
+const motionObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    triggerMotion(e.target);
+    // Count-up for stat numbers
+    e.target.querySelectorAll('.cnt-n').forEach(n => {
+      setTimeout(() => countUp(n), 300);
+    });
+    motionObs.unobserve(e.target);
+  });
+}, {
+  threshold: isMob() ? 0 : 0.08,
+  rootMargin: isMob() ? '100px 0px 100px 0px' : '0px 0px -50px 0px'
+});
+
+// Observe all motion elements
+document.querySelectorAll('.rev, .rev-s, .m-up, .m-left, .m-right, .m-scale, .m-stagger').forEach(el => {
+  motionObs.observe(el);
+});
+
+// On mobile — reveal everything immediately
+if(isMob()) {
+  document.querySelectorAll('.rev,.rev-s,.rev-s > *,.m-up,.m-left,.m-right,.m-scale,.m-stagger,.m-stagger > *').forEach(el => {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.transition = 'none';
+    el.classList.add('m-in','in');
+  });
+}
+
+// Fallback: reveal anything in viewport on scroll
+function scanViewport() {
+  document.querySelectorAll('.rev:not(.in), .rev-s:not(.in), .m-up:not(.m-in), .m-stagger:not(.m-in)').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if(r.top < window.innerHeight + 80) triggerMotion(el);
+  });
+}
+window.addEventListener('scroll', scanViewport, { passive:true });
+document.addEventListener('DOMContentLoaded', () => { setTimeout(scanViewport, 100); });
+window.addEventListener('load', () => { setTimeout(scanViewport, 200); });
+
+// ── Parallax on hero logo (desktop only)
+if(!isMob()) {
+  window.addEventListener('scroll', () => {
+    const logo = document.querySelector('.hero-logo');
+    if(logo) logo.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+  }, { passive:true });
+}
+
+// ── Magnetic buttons
+document.querySelectorAll('.btn-o,.btn-f,.c-link').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width/2;
+    const y = e.clientY - r.top - r.height/2;
+    btn.style.transform = `translate(${x*0.18}px,${y*0.18}px)`;
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
+
+// ── Active nav
+const secs = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav ul a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if(window.scrollY >= s.offsetTop - 90) cur = s.id; });
+  navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--ro3)' : ''; });
+}, { passive:true });
+</script>
+</body>
+</html>
